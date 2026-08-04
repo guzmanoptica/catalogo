@@ -19,13 +19,21 @@
         <p>Catálogo</p>
     </header>
     
+    <!-- Filtros Combinados Divididos por Categoría -->
     <div class="area-catalogacion">
-        <button class="filtro-opcion seleccionado" onclick="filtrarCatalogo('todos')">Ver Todo</button>
-        <button class="filtro-opcion" onclick="filtrarCatalogo('sol')">Lentes de Sol</button>
-        <button class="filtro-opcion" onclick="filtrarCatalogo('receta')">Lentes de Receta</button>
-        <button class="filtro-opcion" onclick="filtrarCatalogo('acetato')">Acetato</button>
-        <button class="filtro-opcion" onclick="filtrarCatalogo('metal')">Metal</button>
-        <button class="filtro-opcion" onclick="filtrarCatalogo('combinado')">Combinado</button>
+        <div class="grupo-filtros">
+            <span class="etiqueta-filtro">Tipo:</span>
+            <button class="filtro-tipo seleccionado" onclick="filtrarTipo('todos', this)">Ver Todo</button>
+            <button class="filtro-tipo" onclick="filtrarTipo('sol', this)">Lentes de Sol</button>
+            <button class="filtro-tipo" onclick="filtrarTipo('receta', this)">Lentes de Receta</button>
+        </div>
+        <div class="grupo-filtros" style="margin-top: 12px;">
+            <span class="etiqueta-filtro">Material:</span>
+            <button class="filtro-material seleccionado" onclick="filtrarMaterial('todos', this)">Todos los materiales</button>
+            <button class="filtro-material" onclick="filtrarMaterial('acetato', this)">Acetato</button>
+            <button class="filtro-material" onclick="filtrarMaterial('metal', this)">Metal</button>
+            <button class="filtro-material" onclick="filtrarMaterial('combinado', this)">Combinado</button>
+        </div>
     </div>
 
     <div class="grilla-catalogo" id="contenedor-muestrario"></div>
@@ -56,9 +64,12 @@
             header h1 { margin: 0 0 12px 0; font-size: 3.2rem; text-transform: uppercase; letter-spacing: 2px; color: #bf2222; font-weight: 900; }
             header p { margin: 0; color: #bf2222; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 3px; font-weight: 400; }
             
-            .area-catalogacion { margin: 35px 20px; }
-            .filtro-opcion { font-family: ${configuracionMarca.tipoLetra}; background: #ffffff; border: 1px solid #e5e5e5; padding: 8px 18px; margin: 5px; cursor: pointer; border-radius: 4px; font-weight: 400; font-size: 0.85rem; transition: all 0.2s; text-transform: uppercase; color: #bf2222; letter-spacing: 0.5px; }
-            .filtro-opcion.seleccionado, .filtro-opcion:hover { background: #bf2222; color: #ffffff; border-color: #bf2222; font-weight: 900; }
+            .area-catalogacion { margin: 35px 20px; display: flex; flex-direction: column; align-items: center; gap: 5px; }
+            .grupo-filtros { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 8px; }
+            .etiqueta-filtro { font-family: ${configuracionMarca.tipoLetra}; font-weight: 900; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; color: #bf2222; margin-right: 5px; }
+            
+            .filtro-tipo, .filtro-material { font-family: ${configuracionMarca.tipoLetra}; background: #ffffff; border: 1px solid #e5e5e5; padding: 8px 16px; cursor: pointer; border-radius: 4px; font-weight: 400; font-size: 0.8rem; transition: all 0.2s; text-transform: uppercase; color: #bf2222; letter-spacing: 0.5px; }
+            .filtro-tipo.seleccionado, .filtro-tipo:hover, .filtro-material.seleccionado, .filtro-material:hover { background: #bf2222; color: #ffffff; border-color: #bf2222; font-weight: 900; }
             
             .grilla-catalogo { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 25px; max-width: 1200px; margin: 30px auto; padding: 0 20px; }
             .celda-armazon { background: #ffffff; border: 1px solid #f0f0f0; padding: 25px; text-align: center; border-radius: 4px; }
@@ -80,6 +91,7 @@
 
         // Sistema de carga del muestrario de armazones
         const contenedor = document.getElementById('contenedor-muestrario');
+        
         function renderizarMuestrario(lista) {
             contenedor.innerHTML = "";
             lista.forEach((item, indice) => {
@@ -89,12 +101,35 @@
                 contenedor.appendChild(celda);
             });
         }
-        function filtrarCatalogo(tag) {
-            document.querySelectorAll('.filtro-opcion').forEach(b => b.classList.remove('seleccionado'));
-            event.target.classList.add('seleccionado');
-            if(tag === 'todos') { renderizarMuestrario(todosLosArmazones); } 
-            else { renderizarMuestrario(todosLosArmazones.filter(i => i.tipo === tag || i.material === tag)); }
+
+        // Lógica de Filtrado Inteligente Combinado
+        let tipoSeleccionado = 'todos';
+        let materialSeleccionado = 'todos';
+
+        function aplicarFiltrosCombinados() {
+            const resultado = todosLosArmazones.filter(item => {
+                const coincideTipo = (tipoSeleccionado === 'todos') || (item.tipo === tipoSeleccionado);
+                const coincideMaterial = (materialSeleccionado === 'todos') || (item.material === materialSeleccionado);
+                return coincideTipo && coincideMaterial;
+            });
+            renderizarMuestrario(resultado);
         }
+
+        function filtrarTipo(tipo, elementoBoton) {
+            document.querySelectorAll('.filtro-tipo').forEach(b => b.classList.remove('seleccionado'));
+            elementoBoton.classList.add('seleccionado');
+            tipoSeleccionado = tipo;
+            aplicarFiltrosCombinados();
+        }
+
+        function filtrarMaterial(material, elementoBoton) {
+            document.querySelectorAll('.filtro-material').forEach(b => b.classList.remove('seleccionado'));
+            elementoBoton.classList.add('seleccionado');
+            materialSeleccionado = material;
+            aplicarFiltrosCombinados();
+        }
+
+        // Carga inicial de todo el catálogo
         renderizarMuestrario(todosLosArmazones);
     </script>
 </body>
