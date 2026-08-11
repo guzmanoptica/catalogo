@@ -84,7 +84,6 @@ const todosLosArmazones = [
     { archivo: 'Armazon 83.jpg', tipo: 'receta', material: 'acetato' },
     { archivo: 'Armazon 84.jpg', tipo: 'receta', material: 'acetato' },
     { archivo: 'Armazon 85.jpg', tipo: 'receta', material: 'acetato' },
-    // --- LENTES DE RECETA (ACETATO) ---
     { archivo: '20250724_153415.jpg', tipo: 'receta', material: 'acetato' },
     { archivo: '20250724_153429.jpg', tipo: 'receta', material: 'acetato' },
     { archivo: '20250724_153510.jpg', tipo: 'receta', material: 'acetato' },
