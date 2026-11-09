@@ -67,55 +67,63 @@ const todosLosArmazones = [
     { archivo: '20251119_155744.jpg', tipo: 'sol', material: 'acetato' },
     { archivo: '20251119_155750.jpg', tipo: 'sol', material: 'acetato' },
 
-    // --- LENTES DE RECETA (FILTRADOS) ---
-    { archivo: 'Armazon 61.jpg', tipo: 'receta', material: 'acetato' },
-    { archivo: 'Armazon 62.jpg', tipo: 'receta', material: 'acetato' },
-    { archivo: 'Armazon 64.jpg', tipo: 'receta', material: 'acetato' },
-    { archivo: 'Armazon 65.jpg', tipo: 'receta', material: 'acetato' },
-    { archivo: 'Armazon 71.jpg', tipo: 'receta', material: 'acetato' },
-    { archivo: 'Armazon 73.jpg', tipo: 'receta', material: 'acetato' },
-    { archivo: 'Armazon 74.jpg', tipo: 'receta', material: 'acetato' },
-    { archivo: 'Armazon 75.jpg', tipo: 'receta', material: 'acetato' },
-    { archivo: 'Armazon 76.jpg', tipo: 'receta', material: 'combinado' },
-    { archivo: 'Armazon 77.jpg', tipo: 'receta', material: 'acetato' },
-    { archivo: 'Armazon 78.jpg', tipo: 'receta', material: 'acetato' },
-    { archivo: 'Armazon 79.jpg', tipo: 'receta', material: 'acetato' },
-    { archivo: 'Armazon 80.jpg', tipo: 'receta', material: 'acetato' },
-    { archivo: 'Armazon 81.jpg', tipo: 'receta', material: 'acetato' },
-    { archivo: 'Armazon 82.jpg', tipo: 'receta', material: 'acetato' },
-    { archivo: 'Armazon 83.jpg', tipo: 'receta', material: 'acetato' },
-    { archivo: 'Armazon 84.jpg', tipo: 'receta', material: 'acetato' },
-    { archivo: 'Armazon 85.jpg', tipo: 'receta', material: 'acetato' },
-    { archivo: '20250724_153415.jpg', tipo: 'receta', material: 'acetato' },
-    { archivo: '20250724_153429.jpg', tipo: 'receta', material: 'acetato' },
-    { archivo: '20250724_153510.jpg', tipo: 'receta', material: 'acetato' },
-    { archivo: '20250724_153536.jpg', tipo: 'receta', material: 'acetato' },
-    { archivo: '20250724_153600.jpg', tipo: 'receta', material: 'acetato' },
-    { archivo: '20250724_153610.jpg', tipo: 'receta', material: 'acetato' },
-    { archivo: '20250820_161210.jpg', tipo: 'receta', material: 'acetato' },
-    { archivo: '20250820_161222.jpg', tipo: 'receta', material: 'acetato' },
-    { archivo: '20251020_103040.jpg', tipo: 'receta', material: 'acetato' },
-    { archivo: '20251020_103046.jpg', tipo: 'receta', material: 'acetato' },
-    { archivo: '20251020_103052.jpg', tipo: 'receta', material: 'acetato' },
-    { archivo: '20260218_141733.jpg', tipo: 'receta', material: 'acetato' },
-    { archivo: '20260218_141855.jpg', tipo: 'receta', material: 'acetato' },
-    { archivo: '20260619_104426.jpg', tipo: 'receta', material: 'acetato' },
-    { archivo: '20260714_153454.jpg', tipo: 'receta', material: 'acetato' },
-    { archivo: '20260714_153512.jpg', tipo: 'receta', material: 'acetato' },
-    { archivo: '20260714_153529.jpg', tipo: 'receta', material: 'acetato' },
-    { archivo: '20260714_153535.jpg', tipo: 'receta', material: 'acetato' },
-    { archivo: '20260805_140148.jpg', tipo: 'receta', material: 'acetato' },
-    { archivo: '20260805_140219.jpg', tipo: 'receta', material: 'acetato' },
-    { archivo: '20260805_140237.jpg', tipo: 'receta', material: 'acetato' },
-    { archivo: '20260805_140302.jpg', tipo: 'receta', material: 'acetato' },
-    { archivo: '20260805_140318.jpg', tipo: 'receta', material: 'acetato' },
-    { archivo: '20260805_140326.jpg', tipo: 'receta', material: 'acetato' },
-    { archivo: '20260805_140344.jpg', tipo: 'receta', material: 'acetato' },
-    { archivo: '20260805_140441.jpg', tipo: 'receta', material: 'acetato' },
-    { archivo: '20260805_140504.jpg', tipo: 'receta', material: 'acetato' },
-    { archivo: '20260805_140535.jpg', tipo: 'receta', material: 'acetato' },
-    { archivo: '20260805_140547.jpg', tipo: 'receta', material: 'acetato' },
-    { archivo: '20260805_140628.jpg', tipo: 'receta', material: 'acetato' },
+    // --- LENTES DE RECETA (CORREGIDO POSICIÓN 1 A 1 EN VISOR) ---
+    { archivo: 'Armazon 61.jpg', tipo: 'receta', material: 'acetato' }, // Pos 2
+    { archivo: 'Armazon 62.jpg', tipo: 'receta', material: 'acetato' }, // Pos 3
+    { archivo: 'Armazon 64.jpg', tipo: 'receta', material: 'acetato' }, // Pos 5
+    { archivo: 'Armazon 65.jpg', tipo: 'receta', material: 'acetato' }, // Pos 6
+    { archivo: 'Armazon 70.jpg', tipo: 'receta', material: 'acetato' }, // Pos 11
+    { archivo: 'Armazon 71.jpg', tipo: 'receta', material: 'acetato' }, // Pos 12
+    { archivo: 'Armazon 72.jpg', tipo: 'receta', material: 'acetato' }, // Pos 13
+    { archivo: 'Armazon 75.jpg', tipo: 'receta', material: 'acetato' }, // Pos 15
+    { archivo: 'Armazon 77.jpg', tipo: 'receta', material: 'acetato' }, // Pos 17
+    { archivo: 'Armazon 78.jpg', tipo: 'receta', material: 'acetato' }, // Pos 18
+    { archivo: 'Armazon 79.jpg', tipo: 'receta', material: 'acetato' }, // Pos 19
+    { archivo: 'Armazon 80.jpg', tipo: 'receta', material: 'acetato' }, // Pos 20
+    { archivo: 'Armazon 81.jpg', tipo: 'receta', material: 'acetato' }, // Pos 21
+    { archivo: 'Armazon 82.jpg', tipo: 'receta', material: 'acetato' }, // Pos 22
+    { archivo: 'Armazon 83.jpg', tipo: 'receta', material: 'acetato' }, // Pos 23
+    { archivo: 'Armazon 84.jpg', tipo: 'receta', material: 'acetato' }, // Pos 24
+    { archivo: 'Armazon 85.jpg', tipo: 'receta', material: 'acetato' }, // Pos 25
+    { archivo: '20250724_153415.jpg', tipo: 'receta', material: 'acetato' }, // Pos 26
+    { archivo: '20250724_153429.jpg', tipo: 'receta', material: 'acetato' }, // Pos 27
+    { archivo: '20250724_153510.jpg', tipo: 'receta', material: 'acetato' }, // Pos 28
+    { archivo: '20250724_153536.jpg', tipo: 'receta', material: 'acetato' }, // Pos 29
+    { archivo: '20250724_153600.jpg', tipo: 'receta', material: 'acetato' }, // Pos 30
+    { archivo: '20250724_153610.jpg', tipo: 'receta', material: 'acetato' }, // Pos 31
+    { archivo: '20250820_161210.jpg', tipo: 'receta', material: 'acetato' }, // Pos 32
+    { archivo: '20250820_161222.jpg', tipo: 'receta', material: 'acetato' }, // Pos 36
+    { archivo: '20251020_103040.jpg', tipo: 'receta', material: 'acetato' }, // Pos 38
+    { archivo: '20251020_103046.jpg', tipo: 'receta', material: 'acetato' }, // Pos 39
+    { archivo: '20251020_103052.jpg', tipo: 'receta', material: 'acetato' }, // Pos 42
+    { archivo: '20260218_141733.jpg', tipo: 'receta', material: 'acetato' }, // Pos 44
+    { archivo: '20260218_141855.jpg', tipo: 'receta', material: 'acetato' }, // Pos 45
+    { archivo: '20260619_104426.jpg', tipo: 'receta', material: 'acetato' }, // Pos 47
+    { archivo: '20260714_153454.jpg', tipo: 'receta', material: 'acetato' }, // Pos 48
+    { archivo: '20260714_153504.jpg', tipo: 'receta', material: 'acetato' }, // Pos 49
+    { archivo: '20260714_153512.jpg', tipo: 'receta', material: 'acetato' }, // Pos 50
+    { archivo: '20260714_153521.jpg', tipo: 'receta', material: 'acetato' }, // Pos 51
+    { archivo: '20260714_153529.jpg', tipo: 'receta', material: 'acetato' }, // Pos 52
+    { archivo: '20260714_153535.jpg', tipo: 'receta', material: 'acetato' }, // Pos 53
+    { archivo: '20260805_140148.jpg', tipo: 'receta', material: 'acetato' }, // Pos 54
+    { archivo: '20260805_140219.jpg', tipo: 'receta', material: 'acetato' }, // Pos 55
+    { archivo: '20260805_140237.jpg', tipo: 'receta', material: 'acetato' }, // Pos 56
+    { archivo: '20260805_140252.jpg', tipo: 'receta', material: 'acetato' }, // Pos 57
+    { archivo: '20260805_140302.jpg', tipo: 'receta', material: 'acetato' }, // Pos 58
+    { archivo: '20260805_140318.jpg', tipo: 'receta', material: 'acetato' }, // Pos 60
+    { archivo: '20260805_140326.jpg', tipo: 'receta', material: 'acetato' }, // Pos 61
+    { archivo: '20260805_140337.jpg', tipo: 'receta', material: 'acetato' }, // Pos 62
+    { archivo: '20260805_140344.jpg', tipo: 'receta', material: 'acetato' }, // Pos 64
+    { archivo: '20260805_140423.jpg', tipo: 'receta', material: 'acetato' }, // Pos 66
+    { archivo: '20260805_140430.jpg', tipo: 'receta', material: 'acetato' }, // Pos 67
+    { archivo: '20260805_140441.jpg', tipo: 'receta', material: 'acetato' }, // Pos 68
+    { archivo: '20260805_140449.jpg', tipo: 'receta', material: 'acetato' }, // Pos 69
+    { archivo: '20260805_140504.jpg', tipo: 'receta', material: 'acetato' }, // Pos 70
+    { archivo: '20260805_140527.jpg', tipo: 'receta', material: 'acetato' }, // Pos 71
+    { archivo: '20260805_140535.jpg', tipo: 'receta', material: 'acetato' }, // Pos 72
+    { archivo: '20260805_140547.jpg', tipo: 'receta', material: 'acetato' }, // Pos 75
+    { archivo: '20260805_140617.jpg', tipo: 'receta', material: 'acetato' }, // Pos 76
+    { archivo: '20260805_140628.jpg', tipo: 'receta', material: 'acetato' }, // Pos 77
     { archivo: '20260218_141913.jpg', tipo: 'receta', material: 'acetato' },
     { archivo: '20260218_141922.jpg', tipo: 'receta', material: 'acetato' },
     { archivo: '20250820_161145.jpg', tipo: 'receta', material: 'metal' },
